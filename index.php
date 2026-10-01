@@ -106,6 +106,10 @@ $initials = strtoupper(substr($firstName, 0, 1) . substr($lastName, 0, 1));
                     </div>
                     <button class="chevron" id="profileMenuBtn">⌄</button>
                 </div>
+                <form class="topbar-logout" action="logout.php" method="post">
+                    <input type="hidden" name="csrf_token" value="<?= auth_escape(auth_csrf_token()) ?>">
+                    <button type="submit" aria-label="Sign out of Paw Net"><span aria-hidden="true">↪</span><span>Sign out</span></button>
+                </form>
             </div>
         </header>
 

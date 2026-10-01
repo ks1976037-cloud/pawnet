@@ -72,6 +72,8 @@ button { cursor: pointer; }
 }
 .notification-dot { position: absolute; right: 9px; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: #ff5b7a; border: 2px solid #fff; }
 .user-menu { display: flex; align-items: center; gap: 10px; background: rgba(123,92,255,0.05); border: 1px solid rgba(123,92,255,0.08); padding: 7px 10px 7px 8px; border-radius: 14px; }
+.topbar-logout button { display: inline-flex; align-items: center; gap: 7px; padding: 10px 13px; border: 1px solid rgba(123,92,255,0.16); border-radius: 11px; background: #fff; color: #5f4a93; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.topbar-logout button:hover { background: var(--primary-light); }
 .avatar, .message-avatar {
   width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-light), rgba(123,92,255,0.18)); color: var(--primary); display: grid; place-items: center; font-size: 11px; font-weight: 800;
 }
@@ -236,6 +238,7 @@ body.dark .sidebar, body.dark .topbar, body.dark .panel, body.dark .stat-card, b
 body.dark .search-box, body.dark .appointment-card, body.dark .chat-messages, body.dark .nav-item:hover, body.dark .nav-item.active { background: rgba(77,73,98,0.28); }
 body.dark input, body.dark select, body.dark textarea { background: rgba(65,63,83,0.7); color: white; border-color: rgba(180,185,255,0.15); }
 body.dark .outline-btn { background: transparent; }
+body.dark .topbar-logout button { background: rgba(65,63,83,0.7); color: var(--text); border-color: rgba(180,185,255,0.15); }
 body.dark .filter-bar input, body.dark .filter-bar select, body.dark .form-panel input, body.dark .form-panel textarea, body.dark .message-form input { background: rgba(58,56,77,0.75); }
 @media (max-width: 1100px) { .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .full-pet-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .content-grid, .bottom-grid { grid-template-columns: 1fr; } .pet-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 800px) { .sidebar { transform: translateX(-100%); transition: 0.25s ease; box-shadow: 10px 0 30px rgba(24,22,36,0.12); } .sidebar.open { transform: translateX(0); } .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(15,12,23,0.5); z-index: 25; } .sidebar-overlay.open { display: block; } .main-content { margin-left: 0; width: 100%; } .mobile-menu { display: block; } .topbar { padding: 0 18px; } .search-box { width: 45%; } .user-summary { display: none; } .dashboard-section { padding: 28px 18px; } .message-layout, .profile-layout { grid-template-columns: 1fr; height: auto; } .conversation-list { min-height: 230px; } .chat-panel { height: 450px; } .full-pet-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
