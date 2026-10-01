@@ -2,6 +2,7 @@
 /data/accounts.php
 /data/applications.json
 /data/messages.json
+/paw-net-deploy.zip
 
 # Local configuration and logs
 .env
