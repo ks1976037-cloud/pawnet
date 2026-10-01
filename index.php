@@ -3,7 +3,7 @@ require_once __DIR__ . '/auth_helpers.php';
 start_auth_session();
 
 if (empty($_SESSION['user'])) {
-    header('Location: login.php');
+    header('Location: welcome.php');
     exit;
 }
 

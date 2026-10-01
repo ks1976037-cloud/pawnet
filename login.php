@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <main class="auth-shell">
         <section class="auth-story">
-            <a class="auth-brand" href="login.php"><span class="brand-mark">🐾</span><span>Paw Net<small>Find your kind of love.</small></span></a>
+            <a class="auth-brand" href="welcome.php"><span class="brand-mark">🐾</span><span>Paw Net<small>Find your kind of love.</small></span></a>
             <div class="story-copy">
                 <span class="eyebrow">A BETTER BEGINNING</span>
                 <h1>Good things happen when you meet your match.</h1>

@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <main class="auth-shell register-shell">
         <section class="auth-story">
-            <a class="auth-brand" href="register.php"><span class="brand-mark">🐾</span><span>Paw Net<small>Find your kind of love.</small></span></a>
+            <a class="auth-brand" href="welcome.php"><span class="brand-mark">🐾</span><span>Paw Net<small>Find your kind of love.</small></span></a>
             <div class="story-copy">
                 <span class="eyebrow">YOUR STORY STARTS HERE</span>
                 <h1>Make room for a little more love.</h1>

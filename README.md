@@ -13,7 +13,7 @@ A PHP-backed pet adoption dashboard for cats, dogs, and hamsters. It includes re
    ```
 
    If PHP is available on your PATH, use `php -S 127.0.0.1:8000 -t .` instead.
-4. Open <http://127.0.0.1:8000/register.php> to create an adopter account, then sign in at <http://127.0.0.1:8000/login.php>.
+4. Open <http://127.0.0.1:8000/> to choose **Sign in** or **Create an account**.
 
 Use the same host name (`127.0.0.1`) while signing in and browsing so the PHP session cookie stays available. The `data` directory must be writable by PHP so the app can save accounts and activity.
 
