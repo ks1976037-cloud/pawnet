@@ -1,0 +1,371 @@
+/* Paw Net Admin Messages */
+
+.messages-count {
+  padding: 9px 14px;
+  border-radius: 20px;
+  background: #f0eaff;
+  color: #754cff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.messages-workspace {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.7fr);
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.messages-workspace .panel {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e9e5f5;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(38, 23, 75, 0.04);
+}
+
+.messages-inbox {
+  padding: 20px;
+}
+
+.messages-inbox h2,
+.conversation-header h2 {
+  margin: 0 0 8px;
+  color: #261b40;
+  font-size: 21px;
+}
+
+.messages-search {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.messages-search input,
+.messages-search select,
+.reply-form textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #e2deeb;
+  border-radius: 9px;
+  background: #fff;
+  color: #261b40;
+  font: inherit;
+}
+
+.messages-search input:focus,
+.messages-search select:focus,
+.reply-form textarea:focus {
+  outline: none;
+  border-color: #8057ff;
+  box-shadow: 0 0 0 3px rgba(128, 87, 255, 0.1);
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #8057ff, #986dff);
+  color: #fff;
+}
+
+.primary-btn:hover {
+  box-shadow: 0 5px 15px rgba(128, 87, 255, 0.2);
+}
+
+.secondary-btn {
+  background: #f0eaff;
+  color: #754cff;
+}
+
+.conversation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.conversation-item {
+  display: block;
+  padding: 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.conversation-item:hover {
+  background: #faf8ff;
+}
+
+.conversation-item.selected {
+  border-color: #d9ccff;
+  background: #f3efff;
+}
+
+.conversation-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+
+.conversation-item-top strong {
+  color: #261b40;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.unread-dot {
+  flex: 0 0 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #8057ff;
+}
+
+.conversation-subject,
+.conversation-preview {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.conversation-subject {
+  margin-bottom: 6px;
+  color: #493b62;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.conversation-preview {
+  color: #858099;
+  font-size: 12px;
+}
+
+.messages-conversation {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+}
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 22px;
+  border-bottom: 1px solid #eeeaf6;
+}
+
+.conversation-header p {
+  margin: 0 0 12px;
+  color: #858099;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.conversation-subject-heading {
+  color: #493b62;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.message-thread {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  background: #fcfbff;
+}
+
+.message-bubble-wrap {
+  display: flex;
+  width: 100%;
+}
+
+.message-bubble-wrap.received {
+  justify-content: flex-start;
+}
+
+.message-bubble-wrap.sent {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  max-width: min(80%, 520px);
+  padding: 14px 16px;
+  border: 1px solid #e9e5f5;
+  border-radius: 14px;
+  background: #fff;
+  overflow-wrap: anywhere;
+}
+
+.message-bubble-wrap.sent .message-bubble {
+  border-color: #8057ff;
+  background: #8057ff;
+  color: #fff;
+}
+
+.message-sender {
+  margin-bottom: 8px;
+  color: #754cff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.message-bubble-wrap.sent .message-sender {
+  color: #fff;
+}
+
+.message-bubble p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: normal;
+}
+
+.message-bubble time {
+  display: block;
+  color: #858099;
+  font-size: 11px;
+}
+
+.message-bubble-wrap.sent .message-bubble time {
+  color: #eee6ff;
+}
+
+.reply-form {
+  padding: 20px;
+  border-top: 1px solid #eeeaf6;
+}
+
+.reply-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #382d50;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.reply-form textarea {
+  display: block;
+  min-height: 110px;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.reply-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.reply-footer span {
+  color: #858099;
+  font-size: 12px;
+}
+
+.messages-empty {
+  padding: 24px 12px;
+  text-align: center;
+  color: #858099;
+}
+
+.messages-empty strong,
+.messages-empty h2 {
+  display: block;
+  margin: 0 0 8px;
+  color: #493b62;
+  font-size: 16px;
+}
+
+.messages-empty p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.conversation-empty {
+  margin: auto;
+  padding: 40px 24px;
+}
+
+.messages-alert {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border: 1px solid #f0d4d4;
+  border-radius: 10px;
+  background: #fff5f5;
+  color: #a33131;
+}
+
+@media (max-width: 950px) {
+  .messages-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .messages-inbox {
+    max-height: 430px;
+    overflow-y: auto;
+  }
+
+  .messages-conversation {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 560px) {
+  .messages-inbox,
+  .conversation-header,
+  .reply-form {
+    padding: 16px;
+  }
+
+  .message-thread {
+    padding: 16px;
+  }
+
+  .conversation-header {
+    flex-direction: column;
+  }
+
+  .message-bubble {
+    max-width: 92%;
+  }
+
+  .reply-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .reply-footer .primary-btn {
+    width: 100%;
+  }
+}

@@ -56,8 +56,16 @@ function auth_csrf_is_valid(): bool
 
 function redirect_if_authenticated(): void
 {
-    if (!empty($_SESSION['user'])) {
-        header('Location: index.php');
+    if (!empty($_SESSION['user']) && is_array($_SESSION['user'])) {
+        $destination = auth_user_is_admin($_SESSION['user'])
+            ? 'admin/index.php'
+            : 'index.php';
+        header('Location: ' . $destination);
         exit;
     }
+}
+
+function auth_user_is_admin(array $user): bool
+{
+    return ($user['role'] ?? 'user') === 'admin';
 }

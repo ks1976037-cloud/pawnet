@@ -1,11 +1,7 @@
 <?php
 require_once __DIR__ . '/auth_helpers.php';
 start_auth_session();
-
-if (!empty($_SESSION['user'])) {
-    header('Location: index.php');
-    exit;
-}
+redirect_if_authenticated();
 ?>
 <!DOCTYPE html>
 <html lang="en">

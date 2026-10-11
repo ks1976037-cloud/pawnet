@@ -61,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'email' => $user['email'],
                     'phone' => $user['phone'],
                     'address' => $user['address'],
+                    'role' => 'user',
                 ];
                 $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
                 header('Location: index.php');

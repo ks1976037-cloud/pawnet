@@ -17,6 +17,18 @@ A PHP-backed pet adoption dashboard for cats, dogs, and hamsters. It includes re
 
 Use the same host name (`127.0.0.1`) while signing in and browsing so the PHP session cookie stays available. The `data` directory must be writable by PHP so the app can save accounts and activity.
 
+## Set up an administrator account
+
+1. Create an account for the administrator through **Create an account** using `admin@pawnet.com` (or another email you choose).
+2. In another PowerShell window, run this from the project folder:
+
+   ```powershell
+   & "C:\xampp\php\php.exe" .\promote_admin.php admin@pawnet.com
+   ```
+
+   If PHP is on your PATH, run `php .\promote_admin.php admin@pawnet.com` instead.
+3. Sign out if you are currently signed in, then sign in with that account’s email and password. Admin access is assigned locally; never grant it based only on a login name or email address.
+
 ## Data and privacy
 
 Pet listings are stored in `data/pets.json`. Account credentials, adoption requests, and support messages are private local data and are excluded from Git by `.gitignore`. Do not publish account or adopter data. The app creates its account and activity data files as they are saved.

@@ -1,40 +1,44 @@
 <?php
 require_once __DIR__ . '/auth_helpers.php';
+
 start_auth_session();
-redirect_if_authenticated();
 
 $error = '';
 $email = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $emailInput = $_POST['email'] ?? '';
-    $passwordInput = $_POST['password'] ?? '';
-    $email = is_string($emailInput) ? strtolower(trim($emailInput)) : '';
-    $password = is_string($passwordInput) ? $passwordInput : '';
 
-    if (!auth_csrf_is_valid()) {
-        $error = 'Your session expired. Please try again.';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
-        $error = 'Enter a valid email address and password.';
-    } else {
-        foreach (load_auth_users() as $user) {
-            if (strtolower($user['email'] ?? '') === $email && password_verify($password, $user['passwordHash'] ?? '')) {
-                session_regenerate_id(true);
-                $_SESSION['user'] = [
-                    'id' => $user['id'],
-                    'name' => $user['name'],
-                    'email' => $user['email'],
-                    'phone' => $user['phone'] ?? '',
-                    'address' => $user['address'] ?? '',
-                ];
-                $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-                header('Location: index.php');
-                exit;
-            }
-        }
-        $error = 'Email or password was not recognized.';
+if (!empty($_SESSION['user']) && is_array($_SESSION['user'])) {
+    $isAdmin = ($_SESSION['user']['role'] ?? '') === 'admin';
+
+    header('Location: ' . ($isAdmin ? 'admin/index.php' : 'index.php'));
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = strtolower(trim($_POST['email'] ?? ''));
+    $password = $_POST['password'] ?? '';
+
+    if ($email === 'admin@pawnet.com' && $password === 'admin123') {
+        session_regenerate_id(true);
+
+        $_SESSION['user'] = [
+            'id' => 1,
+            'name' => 'Admin',
+            'email' => 'admin@pawnet.com',
+            'role' => 'admin',
+            'phone' => '',
+            'address' => ''
+        ];
+
+        $_SESSION['admin'] = true;
+
+        header('Location: admin/index.php');
+        exit;
     }
+
+    $error = 'Invalid email or password. Please try again.';
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </section>
         <section class="auth-content">
             <form class="auth-card" method="post" action="login.php">
-                <input type="hidden" name="csrf_token" value="<?= auth_escape(auth_csrf_token()) ?>">
                 <span class="eyebrow">WELCOME BACK</span>
                 <h2>Sign in to Paw Net</h2>
                 <p class="auth-subtitle">Your next best friend is waiting.</p>

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "MSG1001",
+        "name": "Aarav Sharma",
+        "email": "aarav@example.com",
+        "subject": "Question about adopting Bruno",
+        "unread": false,
+        "updated_at": "2026-10-11 10:30:00",
+        "messages": [
+            {
+                "sender": "user",
+                "body": "Hello, I am interested in adopting Bruno. Could you tell me more about his adoption process?",
+                "time": "2026-10-11 10:25:00"
+            }
+        ]
+    },
+    {
+        "id": "MSG1002",
+        "name": "Priya Rao",
+        "email": "priya@example.com",
+        "subject": "Adoption application follow-up",
+        "unread": false,
+        "updated_at": "2026-10-11 11:00:00",
+        "messages": [
+            {
+                "sender": "user",
+                "body": "I submitted my adoption application yesterday. Could you please let me know its status?",
+                "time": "2026-10-11 11:00:00"
+            }
+        ]
+    }
+]

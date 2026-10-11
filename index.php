@@ -7,7 +7,7 @@ if (empty($_SESSION['user'])) {
     exit;
 }
 
-$currentUser = $_SESSION['user'];
+
 $userName = trim((string) ($currentUser['name'] ?? 'Paw Net adopter'));
 $userEmail = (string) ($currentUser['email'] ?? '');
 $userPhone = (string) ($currentUser['phone'] ?? '');
@@ -72,12 +72,12 @@ $initials = strtoupper(substr($firstName, 0, 1) . substr($lastName, 0, 1));
             </button>
         </nav>
 
-        <div class="help-card">
+        <!-- <div class="help-card">
             <div class="help-icon">?</div>
             <strong>Need help?</strong>
             <p>Our adoption team is happy to help you.</p>
             <button id="contactTeamBtn">Contact Team</button>
-        </div>
+        </div> -->
 
         <form action="logout.php" method="post">
             <input type="hidden" name="csrf_token" value="<?= auth_escape(auth_csrf_token()) ?>">
